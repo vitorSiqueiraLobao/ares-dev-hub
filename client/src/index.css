@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --ares-red: #ff003c;
+    --ares-red-glow: rgba(255, 0, 60, 0.4);
+    --ares-cyan: #00f0ff;
+    --ares-cyan-glow: rgba(0, 240, 255, 0.4);
+    --ares-dark: #0a0a0c;
+    --ares-surface: #121216;
+    --ares-surface-hover: #1b1b22;
+  }
+
+  body {
+    background-color: var(--ares-dark);
+    color: #e2e8f0;
+    font-family: 'JetBrains Mono', 'Share Tech Mono', monospace;
+  }
+}
+
+/* Cyber-Red HUD Cut Corners */
+.ares-cut {
+  clip-path: polygon(
+    0 8px, 8px 0,
+    calc(100% - 8px) 0, 100% 8px,
+    100% calc(100% - 8px), calc(100% - 8px) 100%,
+    8px 100%, 0 calc(100% - 8px)
+  );
+}
+
+.ares-cut-sm {
+  clip-path: polygon(
+    0 4px, 4px 0,
+    calc(100% - 4px) 0, 100% 4px,
+    100% calc(100% - 4px), calc(100% - 4px) 100%,
+    4px 100%, 0 calc(100% - 4px)
+  );
+}
+
+/* Glow Borders and Text */
+.ares-border-red {
+  border: 1px solid var(--ares-red);
+  box-shadow: 0 0 10px rgba(255, 0, 60, 0.25);
+}
+
+.ares-border-cyan {
+  border: 1px solid var(--ares-cyan);
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.25);
+}
+
+.ares-glow-cyan {
+  text-shadow: 0 0 8px var(--ares-cyan-glow);
+}
+
+.ares-glow-red {
+  text-shadow: 0 0 8px var(--ares-red-glow);
+}
+
+/* Subtle HUD Grid Overlay */
+.ares-grid-bg {
+  background-size: 30px 30px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 0, 60, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0c;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2a35;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ares-red);
+}

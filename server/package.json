@@ -1,0 +1,32 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "private": true,
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test": "node --test dist/**/*.test.js"
+  },
+  "dependencies": {
+    "@fastify/cors": "^10.0.2",
+    "@fastify/static": "^10.1.6",
+    "@fastify/websocket": "^11.0.2",
+    "dotenv": "^16.4.7",
+    "fastify": "^5.2.1",
+    "newman": "^6.2.1",
+    "node-pty": "^1.0.2",
+    "node-sql-parser": "^5.3.6",
+    "simple-git": "^3.27.0",
+    "telnet-client": "^2.1.2",
+    "ws": "^8.18.1"
+  },
+  "devDependencies": {
+    "@types/newman": "^5.3.6",
+    "@types/node": "^22.13.1",
+    "@types/ws": "^8.5.14",
+    "tsx": "^4.19.3",
+    "typescript": "^5.7.3"
+  }
+}

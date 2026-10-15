@@ -1,0 +1,20 @@
+{
+  "name": "ares-dev-hud",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ARES Dev HUD: Multi-Agent Orchestrator, IRIS Telnet Automation, MCP SQL Guard & Dev Cockpit",
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "npm --workspace=server run dev",
+    "dev:client": "npm --workspace=client run dev",
+    "build": "npm --workspace=server run build && npm --workspace=client run build",
+    "test": "npm --workspace=server test"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
